@@ -9,18 +9,19 @@
 <body ng-cloak ng-controller="todoController">
   <div class="container">
     <header>
-      <div ng-click="showTodo()" class="section four columns">
+      <div ng-class="{changeBackground: newTodo}" ng-click="showTodo()" class="section four columns">
         <p class="sectionText">New</p>
       </div>
-      <div ng-click="showCurrentDo()" class="section four columns">
+      <div ng-class="{changeBackground: currentDo}" ng-click="showCurrentDo()" class="section four columns">
         <p class="sectionText">Do</p>
       </div>
-      <div ng-click="showDone()" class="section four columns">
+      <div ng-class="{changeBackground: done}" ng-click="showDone()" class="section four columns">
         <p class="sectionText">Did</p>
       </div>
     </header>
     <main>
       <div ng-show="newTodo" class="eight offset-by-two columns">
+      <h1>What do you have to do?</h1>
       <input ng-model="todo.text" type="text" class="newDo u-full-width">
       <button ng-click="addTodo(todo)">Add it</button>
       </div>
